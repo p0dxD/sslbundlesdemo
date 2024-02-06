@@ -1,0 +1,22 @@
+spring:
+ ssl:
+   bundle:
+     jks:
+       secure-service:
+         key:
+           alias: "secure-service"
+         keystore:
+           location: "classpath:keystore.p12"
+           password: "FooBar"
+           type: "PKCS12"
+       web-server:
+         key:
+           alias: "secure-service"
+         keystore:
+           location: "classpath:keystore.p12"
+           password: "FooBar"
+           type: "PKCS12"
+server:
+  ssl:
+    bundle: "web-server"
+    client-auth: NEED
